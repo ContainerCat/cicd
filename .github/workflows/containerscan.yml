@@ -12,7 +12,7 @@ jobs:
       - name: build
         uses: docker/build-push-action@v3
         with:
-          context .
+          context: .
           load: true
           tags: catovh/app:latest
       - name: scan for vulnerabilities
