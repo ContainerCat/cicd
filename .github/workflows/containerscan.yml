@@ -1,0 +1,23 @@
+name: container scan for vulnerabilities
+
+on:
+  puhsh:
+    branch: [ master ]
+  
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: build
+        uses: docker/build-push-action@v3
+        with:
+          context .
+          load: true
+          tags: catovh/app:latest
+      - name: scan for vulnerabilities
+        uses: crazy-max/ghaction-container-scan@v2
+        with:
+          image: catovh/app:latest
+          severity_treshold: HIGH
+          annotations: true
