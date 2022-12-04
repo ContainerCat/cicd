@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: perform static testing
+        uses: codiga/github-action@master
         with:
           repo_token: ${{ secrets.TOKEN }}
           codiga_api_token: ${{ secrets.CODIGA_API_TOKEN }}
