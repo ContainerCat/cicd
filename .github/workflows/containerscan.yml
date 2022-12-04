@@ -23,8 +23,3 @@ jobs:
         with:
           image: catovh/app:latest
           annotations: true
-      - name: archive artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: report
-          path: report

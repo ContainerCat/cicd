@@ -1,0 +1,15 @@
+name: static code testing
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: perform static testing
+        with:
+          repo_token: ${{ secrets.TOKEN }}
+          codiga_api_token: ${{ secrets.CODIGA_API_TOKEN }}
+          max_timeout_sec: 300
