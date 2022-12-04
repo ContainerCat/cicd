@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
-        id: checkout
         uses: actions/checkout@v2.4.0
+        
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
+          node-version: '14'
+      - run: npm install
+
       - name: code analysis
-        id: code
         uses: SecureStackCo/actions-code@v0.1.1
         with:
           securestack_api_key: ${{ secrets.SECURESTACK_API_KEY }}
