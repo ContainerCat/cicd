@@ -15,6 +15,6 @@ jobs:
           node-version: '14'
       - run: npm install
       - name: create SBOM
-        uses: CyclonDX/gh-node-module-generatebom@master
+        uses: CycloneDX/gh-node-module-generatebom@master
         with:
           output: ./sbom.xml
