@@ -19,5 +19,10 @@ jobs:
         uses: crazy-max/ghaction-container-scan@v2
         with:
           image: catovh/app:latest
-          severity_treshold: HIGH
+          severity_threshold: HIGH
           annotations: true
+      - name: archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: output/vuln.txt
