@@ -7,6 +7,9 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./NODE-BULLETIN-BOARD
     steps:
       - uses: actions/checkout@v3
       - name: build
@@ -24,4 +27,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: report
-          path: output/vuln.txt
+          path: report
